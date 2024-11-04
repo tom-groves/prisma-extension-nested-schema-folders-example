@@ -1,0 +1,9 @@
+model Project {
+    id        Int      @id @default(autoincrement())
+    createdAt DateTime @default(now())
+    updatedAt DateTime @default(now()) @updatedAt
+
+    company   Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+    companyId Int
+    name      String
+}

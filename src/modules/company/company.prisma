@@ -1,0 +1,11 @@
+model Company {
+    id        Int      @id @default(autoincrement())
+    createdAt DateTime @default(now())
+    updatedAt DateTime @default(now()) @updatedAt
+
+    name String @unique
+
+    projects Project[]
+
+    @@index([name])
+}
